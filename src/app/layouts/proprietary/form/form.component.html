@@ -1,0 +1,9 @@
+<div class="container">
+    
+<app-prop-navbar (isMenuOpenChange)="onChangeNumber($event)"></app-prop-navbar>
+<div class="form-container" [ngClass]="{'menu-open': isMenuOpen}" >
+    <app-form-content></app-form-content>
+</div>
+<app-prop-footer> </app-prop-footer>
+</div>
+

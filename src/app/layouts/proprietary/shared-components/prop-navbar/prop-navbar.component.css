@@ -1,0 +1,109 @@
+.menu {
+  height: 80px;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(238, 225, 225);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.text {
+  color: rgba(255, 143, 15, 0.878);
+  font-size: 2.3rem;
+  font-weight: bolder;
+}
+
+.ul-top {
+  list-style: none;
+  position: relative;
+  height: 95%;
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 30px;
+}
+ul li{
+  list-style: none;
+}
+ul li .item {
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background-color: rgba(255, 143, 15, 0.878);
+  transition: 0.5s;
+}
+ul li .signout-item {
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background-color: red;
+  transition: 0.5s;
+}
+
+ul li a:hover{
+  background-color: #ffffff55;
+}
+
+
+ul li a i {
+  font-size: 30px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+  margin: 4px 0;
+}
+.menu-mobile {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 80px;
+  left: 60px;
+  right: 60px;
+  background-color: #343434;
+  width: calc(100% - 120px);
+  padding: 10px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+}
+.menu-mobile a {
+  padding: 10px;
+  text-align: center;
+  color: #ffffff;
+
+}
+
+.menu-mobile.show {
+  display: flex;
+}
+
+@media (max-width: 1020px) {
+  .ul-top {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+}

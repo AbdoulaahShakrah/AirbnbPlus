@@ -1,0 +1,25 @@
+/*megins, padding, font padrões para a página*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+
+}
+
+body{
+    background-color: whitesmoke;    
+}
+/*Definição padrão dos hiperlinks*/
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer; 
+}
+
+/*transição para os hiperlinks e para os buttões*/
+button
+{
+    size: 100px;
+    transition: all 0.3s ease;
+}

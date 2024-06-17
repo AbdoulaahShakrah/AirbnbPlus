@@ -1,0 +1,143 @@
+.footer {
+    background: linear-gradient(#f49c0f, #f09b11);
+    color: #fff;
+    padding: 20px 0;
+    height: auto;
+  }
+  
+  .footer-heading-span {
+    color: rgb(241, 241, 14);
+    text-align: center;
+    font-size: 30px;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .column {
+    width: 20%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+  
+  .column p {
+    font-size: 18px;
+  }
+  
+  .column h3 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .column ul li {
+    margin-bottom: 10px;
+    font-size: 17px;
+  }
+  
+  .column img {
+    border-radius: 50%;
+  }
+  
+  .social-icons {
+    margin-top: 20px;
+  }
+  
+  .social-icons i {
+    color: #fff;
+    margin-right: 10px;
+    font-size: 40px;
+    transition: transform 0.2s, color 0.2s;
+  }
+  
+  .social-icons i:hover {
+    transform: translateX(-5px);
+    color: #0033ff;
+  }
+  
+  a:hover {
+    color: gold;
+    font-weight: 600;
+  }
+  
+  hr {
+    border-top: 1px solid white;
+    width: 50%;
+    margin: 20px auto;
+  }
+
+  .copyright{
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo-tipo{
+    width: 100px;
+    height: 100px;
+    object-fit:fill;
+  }
+  
+  @media only screen and (min-width: 330px) and (max-width: 990px) {
+    .container {
+      flex-wrap: wrap;
+    }
+  
+    .column {
+      width: calc(50% - 10px);
+      margin-bottom: 10px;
+      margin-left: 0px;
+    }
+  
+    .column:nth-child(2) {
+      margin-top: 102px;
+      margin-left: 20px;
+    }
+  
+    .column:last-child {
+      margin-right: 0;
+    }
+  
+    .column:nth-child(5) {
+      width: 100%;
+    }
+  
+    .footer-heading-span {
+      margin-left: 0;
+      text-align: center;
+      font-size: 24px;
+    }
+  
+    hr {
+      width: 80%;
+    }
+  }
+  
+  @media only screen and (max-width: 320px) {
+    .column {
+      width: 100%;
+    }
+  
+    .footer-heading-span {
+      font-size: 24px;
+    }
+  
+    .column:nth-child(5) {
+      width: 100%;
+    }
+  
+    hr {
+      width: 80%;
+    }
+  }
+  

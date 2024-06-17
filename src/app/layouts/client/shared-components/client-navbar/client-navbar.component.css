@@ -1,0 +1,334 @@
+/* Container do navbar */
+.navBarContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(238, 225, 225);
+  box-shadow: 0 0.1rem 0.5rem;
+  box-sizing: border-box;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+  padding-bottom: 10px;
+  gap: 3px;
+  transition: height 0.3s ease, padding 0.3s ease;
+}
+
+/* Container do parte de cima do nav bar que contém logo tipo e buttão e simblo do login */
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Ajustar os elementos laterais */
+.side1, .side2 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.side1 {
+  justify-content: flex-start;
+}
+
+.side2 {
+  justify-content: flex-end;
+}
+
+.navBarContainer .headerContainer .side2 .hostLogin {
+  background-color: rgba(255, 143, 15, 0.878);
+  padding: 10px;
+  border-radius: 20px;
+  width: auto;
+  font-size: 17px;
+}
+
+/* O logo tipo que apartida vai mudar *****************/
+.navBarContainer .headerContainer .side1 p {
+  color: rgba(255, 143, 15, 0.878);
+  font-size: 2.3rem;
+  font-weight: bolder;
+}
+
+/* Container da pesquisa */
+.searchContainer {
+  display: flex;
+  width: 75%;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 30px;
+  border: 1px solid #999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin: 0;
+  align-self: center;
+  transition: width 0.3s ease, bottom 0.3s ease;
+}
+
+/* Campos de pesquisa */
+.searchContainer input,
+.hosts .hostsBtn {
+  height: 40px;
+  width: 200px;
+  padding: 5px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.hosts .hostsBtn:focus {
+  outline: none;
+}
+
+/* Div de seleção do hosts com posição relativa ao pai */
+.hosts {
+  position: relative;
+}
+
+/* Menu que vai exibir quando o buttão é clicado */
+.hosts .menu {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 1000;
+}
+
+.menu .menuItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+/* Estilo para os buttões do menu */
+.hosts .menu .menuItem .incrementBtn,
+.hosts .menu .menuItem .decrementBtn {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #000;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hosts .menuItem span {
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+/* Estilo para o icon de pesquisa */
+.searchIcon {
+  cursor: pointer;
+  font-size: 2rem;
+  color: black;
+}
+
+/* hovers */
+.searchContainer select:hover,
+.searchContainer .hostsBtn:hover,
+.searchContainer input:hover,
+.incrementBtn:hover,
+.decrementBtn:hover,
+.hostLogin:hover {
+  background-color: #f3ecec;
+  box-shadow: 0 0 10px 5px rgba(128, 128, 128, 0.7);
+  transform: translateY(2px);
+  transition: 500ms;
+  letter-spacing: 1px;
+}
+.searchIcon:hover{
+  color: #333;
+  transform: translateY(2px);
+  transition: 500ms;
+}
+
+/* Reduz a altura da navbar ao fazer scroll */
+.navBarContainer.scrolled {
+  height: 75px;
+  padding-bottom: 5px;
+}
+
+.navBarContainer.scrolled .searchContainer {
+  position: relative;
+  bottom: 50px;
+  width: 70%;
+}
+
+/* Forçar que seja de mesma cor que os outros */
+.hostsBtn {
+  background-color: #fff;
+}
+
+/* Responsividade */
+
+/* Ajustes para telas médias e grandes */
+@media (max-width: 1200px) {
+  .searchContainer {
+    width: 90%;
+    margin: 0 50px;
+  }
+}
+
+@media (max-width: 970px) {
+  .navBarContainer {
+    height: auto;
+  }
+  .searchContainer input, .hosts .hostsBtn {
+    width: 120px;
+  }
+}
+
+/* Ajustes para tablets */
+@media (max-width: 768px) {
+  .navBarContainer {
+    height: auto;
+  }
+
+  .headerContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .searchContainer {
+    flex-direction: column;
+    width: 90%;
+    margin: 0 20px;
+    padding: 10px;
+  }
+
+  .searchContainer input,
+  .hosts .hostsBtn {
+    width: 400px;
+  }
+
+  .hosts .menu {
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .navBarContainer .headerContainer .side1 p {
+    font-size: 2rem;
+  }
+
+  .navBarContainer .headerContainer .side2 .hostLogin {
+    width: 120px;
+    height: 40px;
+    font-size: 0.8rem;
+  }
+
+  .searchIcon {
+    font-size: 1.5rem;
+  }
+}
+
+/* Ajustes para smartphones */
+@media (max-width: 480px) {
+  .navBarContainer {
+    height: auto;
+  }
+
+  .headerContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .searchContainer {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+  }
+
+  .searchContainer input,
+  .hosts .hostsBtn {
+    width: 100%;
+  }
+
+  .hosts .menu {
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .navBarContainer .headerContainer .side1 p {
+    font-size: 1.8rem;
+  }
+
+  .navBarContainer .headerContainer .side2 .hostLogin {
+    font-size: 0.7rem;
+  }
+
+  .searchIcon {
+    font-size: 1.3rem;
+  }
+}
+
+/* Responsividade ao fazer o scroll */
+@media (max-width: 1460px) {
+  .navBarContainer.scrolled .searchContainer {
+    width: 50%;
+  }
+  .navBarContainer.scrolled .searchContainer input,
+  .navBarContainer.scrolled .hosts .hostsBtn {
+    width: 100px;
+  }
+}
+
+@media (max-width: 910px) {
+  .navBarContainer.scrolled .searchContainer {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .navBarContainer.scrolled {
+    height: auto;
+  }
+
+  .navBarContainer.scrolled .searchContainer input,
+  .navBarContainer.scrolled .hosts .hostsBtn {
+    width: 150px;
+  }
+}
+
+@media (max-width: 168px) {
+  .navBarContainer.scrolled .searchContainer {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .navBarContainer.scrolled {
+    height: auto;
+  }
+
+  .navBarContainer.scrolled .searchContainer input,
+  .navBarContainer.scrolled .hosts .hostsBtn {
+    width: 120px;
+  }
+}

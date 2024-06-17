@@ -1,0 +1,48 @@
+<div class="navBarContainer">
+  <div class="headerContainer">
+    <div class="side1">
+      <a href="#"><p>AirbnbPlus</p></a>
+    </div>
+    <div class="side2">
+      <button class="hostLogin">Entrar como Anfitrião</button>
+    </div>
+  </div>
+
+  <div class="searchContainer">
+    <div class="location">
+      <input type="text" name="destino" id="destino" placeholder="Onde" [(ngModel)]="menuService.location">
+    </div>
+    <div class="checkin">
+      <input type="text" name="checkIn" id="checkIn" placeholder="Check-IN" onfocus="(this.type='date')" [(ngModel)]="menuService.checkin">
+    </div>
+    <div class="checkout">
+      <input type="text" name="checkOut" id="checkOut" placeholder="Check-OUT" onfocus="(this.type='date')" [(ngModel)]="menuService.checkout">
+    </div>
+    <div class="hosts">
+      <button class="hostsBtn" (click)="menuService.toggleMenu()">Quem</button>
+      <div *ngIf="menuService.menuVisible" class="menu">
+        <div class="menuItem">
+          <p>Adultos</p>
+          <button class="incrementBtn" (click)="menuService.increment('adults')">+</button>
+          <span>{{ menuService.adults }}</span>
+          <button class="decrementBtn" (click)="menuService.decrement('adults')">-</button>
+        </div>
+        <div class="menuItem">
+          <p>Bebês</p>
+          <button class="incrementBtn" (click)="menuService.increment('babies')">+</button>
+          <span>{{ menuService.babies }}</span>
+          <button class="decrementBtn" (click)="menuService.decrement('babies')">-</button>
+        </div>
+        <div class="menuItem">
+          <p>Animais</p>
+          <button class="incrementBtn" (click)="menuService.increment('animals')">+</button>
+          <span>{{ menuService.animals }} </span>
+          <button class="decrementBtn" (click)="menuService.decrement('animals')">-</button>
+        </div>
+      </div>
+    </div>
+    <div class="searchIcon" (click)="onSearch()">
+      <i class="fa fa-search" aria-hidden="true"></i>
+    </div>
+  </div>
+</div>

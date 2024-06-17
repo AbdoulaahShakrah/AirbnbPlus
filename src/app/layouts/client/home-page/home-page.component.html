@@ -1,0 +1,4 @@
+<!-- Recebe do client navBar as propriedades da pesquisa e manda para o card child => parent => child -->
+<app-client-navbar  (propertiesSend)="captureProperties($event)"></app-client-navbar>
+<app-property-card [properties]="properties"></app-property-card>
+<app-client-footer></app-client-footer>

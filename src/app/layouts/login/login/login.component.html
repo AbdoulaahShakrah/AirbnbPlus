@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="login-box">
+        <button class="homePage-back" (click)="onBack()"> PESQUISA UMA CASA </button>
+        <div class="login-header">
+            <header>Faça o seu login como anftrião </header>
+        </div>
+        <div class="input-box">
+            <input type="text" name="email" [(ngModel)]="loginObj.EmailId" class="input-field" placeholder="Email" autocomplete="on" required>
+        </div>
+        <div class="input-box">
+            <input type="password" name="password" [(ngModel)]="loginObj.Password" class="input-field" placeholder="Password" autocomplete="off" required>
+        </div>
+        <div class="forgot">
+            <section>
+                <a href="#">Forgot password?</a>
+            </section>
+        </div>
+        <div class="input-submit">
+            <button class="submit-btn" id="submit" (click)="onLogin()"></button>
+            <label for="submit" >Sign In</label>
+        </div>
+        <div *ngIf="loginError" class="error-message">
+            {{ errorMessage }}
+        </div>
+        <div class="terms-conditions">
+            <p>
+                Ao iniciar numa conta, concorda
+            </p>
+            <p>
+                com os nossos <a>Termos e condições </a>
+            </p>
+            <p>
+                e com a <a>Declaração de Privacidade.</a>
+            </p>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,99 @@
+<app-client-navbar></app-client-navbar>
+
+<div *ngIf="selectedProperty !== undefined; else content" class="container">
+
+  <div class="propertyResume">
+    <p>Alojamento 2:2 adultos + 1 criança</p>
+  </div>
+  <div class="slider-location">
+
+    <div class="slider-wrapper" #sliderWrapper>
+      <button id="prev-slide" (click)="scrollLeft()" class="slide-button material-symbols-rounded">
+        chevron_left
+      </button>
+
+      <div class="image-list" #imageList>
+        <img *ngFor="let image of selectedProperty?.images; let i = index" 
+        [src]="image" class="image-item" [alt]="'img-' + i">
+      </div>
+
+      <button id="next-slide" (click)="scrollRight()" class="slide-button material-symbols-rounded">
+        chevron_right
+      </button>
+    </div>
+    <div class="location">
+      <p>{{selectedProperty?.name}}, {{selectedProperty?.city}}</p>
+    </div>
+  </div>
+  <div class="propertyDetails">
+    <div class="left-side">
+      <div class="cancelDetails">
+        <div class="text">
+          <p>{{ selectedProperty?.cancelPolicy}}</p>
+        </div>
+        <div class="cancelSymbol">
+          <i class="fa fa-calendar" aria-hidden="true"></i>
+        </div>
+      </div>
+
+      <div class="commodities-container">
+        <div class="title">
+          <p>Comodidades</p>
+        </div>
+        <div class="commodities">
+          <div class="left-comodities">
+            <div class="wifi">
+              <i class="fa fa-wifi" aria-hidden="true"></i> WIFI
+            </div>
+            <div class="kitchen">
+              <i class="fa fa-cutlery" aria-hidden="true"></i> Cozinha
+            </div>
+            <div class="parking">
+              <i class="fa fa-car" aria-hidden="true"></i> Parking
+            </div>
+          </div>
+          <div class="right-comodities">
+            <div class="self-checkin">
+              <i class="fa fa-key" aria-hidden="true"></i> Self check-in
+            </div>
+            <div class="work-space">
+              <i class="fa fa-briefcase" aria-hidden="true"></i> Espaço de trabalho exclusivo
+            </div>
+            <div class="fridge">
+              <i class="fa-solid fa-refrigerator"></i>
+              Frigorífico
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rightside">
+      <div class="datesbox">
+        <div class="dates">
+          <p class="text">Check-in</p>
+          <p class="date"> 15-12-2025</p>
+        </div>
+        <div class="dates">
+          <p class="text">Check-out</p>
+          <p class="date"> 17-12-2025</p>
+        </div>
+      </div>
+      <div class="hosts-num">
+        <p class="host-text">Hospedes</p>
+        <p class="hosts">2 Adutlo, 1 Criança </p>
+      </div>
+      <button class="reserve-btn"> Reservar </button>
+      <div class="payment-value">
+        <p class="value-text"> Valor a pagar</p>
+        <p class="calc-value"> {{selectedProperty?.price_title}}</p>
+        <p class="total-value"> {{selectedProperty?.amount}} </p>
+      </div>
+    </div>
+  </div>
+</div>
+<app-client-footer></app-client-footer>
+<ng-template #content>
+  <div class="not-found-container">
+    <p class="not-found-text">NADA FOI ENCONTRADO.</p>
+  </div>
+</ng-template>

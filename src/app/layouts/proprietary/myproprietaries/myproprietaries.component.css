@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.my-props{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-open{
+    padding-top: 200px;
+}

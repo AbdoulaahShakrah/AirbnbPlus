@@ -1,0 +1,57 @@
+<div class="menu">
+    <div class="text">
+        <a href="#">
+            <p>AirbnbPlus</p>
+        </a>
+    </div>
+
+    <ul class="ul-top">
+        <li class="menu-item">
+            <a href="#" class="item">
+                <i class="fas fa-home"></i>
+                <p>Minhas Casas</p>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#" class="item">
+                <i class="fa-solid fa-plus"></i>
+                <p>Adicionar Casa</p>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#" class="signout-item">
+                <i class="fas fa-sign-out"></i>
+                <p>Sair</p>
+            </a>
+        </li>
+    </ul>
+
+    <div class="hamburger" (click)="toggleSideMenu()">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </div>
+</div>
+
+<div class="menu-mobile" [ngClass]="{'show': isMenuOpen}">
+    <ul>
+        <li class="menu-item-side">
+            <a href="#" class="item">
+                <i class="fas fa-home"></i>
+                <p>Minhas Casas</p>
+            </a>
+        </li>
+        <li class="menu-item-side">
+            <a href="#" class="item">
+                <i class="fa-solid fa-plus"></i>
+                <p>Adicionar Casa</p>
+            </a>
+        </li>
+        <li class="menu-item-side">
+            <a href="#" class="signout-item">
+                <i class="fas fa-sign-out"></i>
+                <p>Sair</p>
+            </a>
+        </li>
+    </ul>
+</div>

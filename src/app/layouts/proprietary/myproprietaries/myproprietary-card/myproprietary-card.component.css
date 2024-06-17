@@ -1,0 +1,114 @@
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    margin: 16px;
+    box-sizing: border-box;
+}
+
+.added-prop-quantity {
+    margin-bottom: 16px;
+}
+
+.my-props {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    gap: 50px;
+}
+
+.my-props img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin-right: 16px;
+}
+
+.prop-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.top-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.right-side .commodities{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.commodities {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bottom-detail {
+    margin-top: 16px;
+    color: orange;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.edit-btn, .remove-btn {
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.edit-btn {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.remove-btn {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #45a049;
+}
+
+.remove-btn:hover {
+    background-color: #e53935;
+}
+
+
+@media (max-width: 1020px) {
+    .my-props{
+        flex-direction: column;
+    }
+    .my-props img{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
