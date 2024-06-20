@@ -15,24 +15,27 @@ export class PropertyCardComponent {
     private spinner: NgxSpinnerService
   ) {}
   @Input() properties: Property[] = [];
+  loading: boolean = true;
 
   ngOnInit(): void {
     this.homePageSetUp();
   }
 
   homePageSetUp(): void {
-    this.spinner.show();
+    this.loading = true;
+
     this.propertyService.homePageSetUp().subscribe(
       (response) => {
+        this.loading = false;
         this.properties = response;
 
       },
       (error) => {
+        this.loading = false;
         console.error('Error fetching property data', error);
 
       }
     );
-    this.spinner.hide();
 
   }
 
