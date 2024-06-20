@@ -7,9 +7,17 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class PropertyService {
-  private apiKey = 'c844a403bbmsh17e129ce25def82p1677b0jsneb82af38f004';
+  private apiKey = '5a675e6be2msh8f066462f341289p19d8a3jsn8e9c92a5a9aa';
   private apiHost = 'airbnb13.p.rapidapi.com';
   private today = new Date();
+
+   /*
+exemplo de URL: 
+
+https://airbnb13.p.rapidapi.com/search-location?location=Paris&checkin=2024-06-15&
+checkout=2025-01-18&adults=2&children=0&infants=0&pets=0&page=1&currency=USD
+  
+  */
 
   private locations = [
     'Lisboa',
@@ -29,16 +37,8 @@ export class PropertyService {
     headers: {
       'x-rapidapi-key': this.apiKey,
       'x-rapidapi-host': this.apiHost,
-    },  
+    },
   };
-
-  /*
-exemplo de URL: 
-
-https://airbnb13.p.rapidapi.com/search-location?location=Paris&checkin=2024-06-15&
-checkout=2025-01-18&adults=2&children=0&infants=0&pets=0&page=1&currency=USD
-  
-  */
 
   private getTodayDate(todayDate: Date) {
     const year = todayDate.getFullYear();
@@ -46,10 +46,12 @@ checkout=2025-01-18&adults=2&children=0&infants=0&pets=0&page=1&currency=USD
     const day = String(todayDate.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`;
   }
+
   private getLocation(): string {
     const index = Math.floor(Math.random() * this.locations.length);
     return this.locations[index];
   }
+
   private getUrl(
     location: string,
     checkin: string,
@@ -62,8 +64,11 @@ checkout=2025-01-18&adults=2&children=0&infants=0&pets=0&page=1&currency=USD
     return `https://${this.apiHost}/search-location?location=${location}&checkin=${checkin}&checkout=${checkout}&adults=${adults}&children=${children}&infants=${infants}&pets=${pets}&page=1&currency=USD`;
   }
 
-  //todos os observables inscritos recebem o valor do selectedProperty
+  // Observables inscritos recebem o valor do selectedProperty
   private selectedProperty = new BehaviorSubject<Property | null>(null);
+
+  // Adicionar um BehaviorSubject para os resultados da pesquisa
+  private searchResults = new BehaviorSubject<Property[]>([]);
 
   setSelectedProperty(property: Property) {
     this.selectedProperty.next(property);
@@ -73,11 +78,15 @@ checkout=2025-01-18&adults=2&children=0&infants=0&pets=0&page=1&currency=USD
     return this.selectedProperty.asObservable();
   }
 
+  // Método para obter os resultados da pesquisa
+  getSearchResults(): Observable<Property[]> {
+    return this.searchResults.asObservable();
+  }
+
   async fetchProperties(url: string): Promise<any> {
     const response = await fetch(url, this.options);
     return response.json();
   }
-
 
   homePageSetUp(): Observable<Property[]> {
     const url = this.getUrl(
@@ -89,13 +98,11 @@ checkout=2025-01-18&adults=2&children=0&infants=0&pets=0&page=1&currency=USD
       0,
       0
     );
-    // pipe é usado para fazer operações á resposta que vem da função fetchProperties
+    // Pipe é usado para fazer operações na resposta que vem da função fetchProperties
     return from(this.fetchProperties(url)).pipe(
       map((result) => this.mapToProperties(result))
     );
   }
-
-
 
   onSearch(
     location: string,
@@ -115,9 +122,13 @@ checkout=2025-01-18&adults=2&children=0&infants=0&pets=0&page=1&currency=USD
       infants,
       pets
     );
-    // pipe é usado para fazer operações á resposta que vem da função fetchProperties
+    // Pipe é usado para fazer operações na resposta que vem da função fetchProperties
     return from(this.fetchProperties(url)).pipe(
-      map((result) => this.mapToProperties(result))
+      map((result) => {
+        const properties = this.mapToProperties(result);
+        this.searchResults.next(properties); // Atualizar o BehaviorSubject com os novos resultados da pesquisa
+        return properties;
+      })
     );
   }
 
