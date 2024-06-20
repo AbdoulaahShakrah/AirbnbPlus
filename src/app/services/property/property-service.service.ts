@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class PropertyService {
-  private apiKey = 'ac88962f99mshd9f4c393053dbf4p16ca8djsn9228c9cf608a';
+  private apiKey = 'c844a403bbmsh17e129ce25def82p1677b0jsneb82af38f004';
   private apiHost = 'airbnb13.p.rapidapi.com';
   private today = new Date();
 
@@ -33,7 +33,7 @@ export class PropertyService {
   };
 
   /*
-exemplo de URL:
+exemplo de URL: 
 
 https://airbnb13.p.rapidapi.com/search-location?location=Paris&checkin=2024-06-15&
 checkout=2025-01-18&adults=2&children=0&infants=0&pets=0&page=1&currency=USD

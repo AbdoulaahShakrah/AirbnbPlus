@@ -3,12 +3,11 @@ import { CommonModule } from '@angular/common';
 import { ClientRoutingModule } from './client-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { DetailsPageComponent } from './details-page/details-page.component';
-import { PropertyCardComponent } from './home-page/property-card/property-card.component';
+import { PropertyCardComponent } from './shared-components/property-card/property-card.component';
 import { ClientNavbarComponent } from './shared-components/client-navbar/client-navbar.component';
 import { ClientFooterComponent } from './shared-components/client-footer/client-footer.component';
+import { ResultPageComponent } from './result-page/result-page.component';
 import { FormsModule } from '@angular/forms';
-import { NgxSpinnerModule } from 'ngx-spinner';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -18,7 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PropertyCardComponent,
     ClientNavbarComponent,
     ClientFooterComponent,
-    
+    ResultPageComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomePageComponent,
     PropertyCardComponent,
     ClientNavbarComponent,  
-    ClientFooterComponent 
+    ClientFooterComponent,
+    ResultPageComponent
   ]
 })
 export class ClientModule { }

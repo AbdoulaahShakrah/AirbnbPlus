@@ -40,7 +40,7 @@ export class ClientNavbarComponent {
         console.error('Error fetching property data', error);
       }
     );
-    this.route.navigateByUrl('/home-page')
+    this.route.navigateByUrl('/result');
 
   }
 

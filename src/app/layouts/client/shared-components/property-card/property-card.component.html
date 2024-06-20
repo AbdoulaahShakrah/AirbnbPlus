@@ -2,11 +2,11 @@
   <div *ngFor="let property of properties; let i = index" class="property-card-container">
     <a (click)="showPropertyDetails(property)">
       <div class="propertyImage">
-        <img [src]="properties[i].images[0]" alt="Property Image {{property.id}}">
+        <img [src]="property.images[0]" alt="Property Image {{property.id}}">
       </div>
       <div class="propertyDescription">
-        <p>{{properties[i].city}}</p>
-        <p>{{properties[i].name}}</p>
+        <p>{{property.city}}</p>
+        <p>{{property.name}}</p>
       </div>
     </a>
   </div>
