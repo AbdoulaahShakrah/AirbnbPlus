@@ -2,6 +2,7 @@ import { Component, ViewChild, ElementRef, AfterViewInit, OnInit, OnDestroy } fr
 import { PropertyService } from '../../../services/property/property-service.service';
 import { Property } from '../../../interfaces/Property';
 import { Subscription } from 'rxjs';
+import { MenuService } from '../../../services/hostsMenu/host-menu.service';
 
 @Component({
   selector: 'app-details-page',
@@ -14,11 +15,15 @@ export class DetailsPageComponent implements OnInit, OnDestroy {
 
   selectedProperty: Property | null = null;
   propertySubscription: Subscription | undefined;
+  checkInDate: string | null = null;
+  checkOutDate: string | null = null;
 
-  constructor(private propertyService: PropertyService) {}
+  constructor(private propertyService: PropertyService, private hostService: MenuService) {}
 
   ngOnInit(): void {
     this.getProperty();
+    this.checkInDate = this.hostService.checkin || null;
+    this.checkOutDate = this.hostService.checkout || null;
   }
 
   getProperty(): void {

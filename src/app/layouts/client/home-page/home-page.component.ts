@@ -20,6 +20,7 @@ export class HomePageComponent implements OnInit{
     const sub = this.propertyService.homePageSetUp().subscribe(
       (response) => {
         this.properties = response;
+        console.log(response)
       },
       (error) => {
         console.error('Error fetching property data', error);

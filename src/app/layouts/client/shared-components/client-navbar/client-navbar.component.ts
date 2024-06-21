@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, HostListener, ElementRef, Output, EventEmitter } from '@angular/core';
 import { MenuService } from '../../../../services/hostsMenu/host-menu.service';
 import { Property } from '../../../../interfaces/Property';
 import { PropertyService } from '../../../../services/property/property-service.service';
@@ -17,6 +17,7 @@ export class ClientNavbarComponent {
 
   constructor(
     public menuService: MenuService,
+    private elRef: ElementRef, 
     private propertyService: PropertyService,
     private router: Router
   ) {}
@@ -40,5 +41,16 @@ export class ClientNavbarComponent {
         console.error('Error fetching property data', error);
       }
     );
+  }
+
+  
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const container = this.elRef.nativeElement.querySelector('.navBarContainer');
+    if (window.pageYOffset > 20) {
+      container.classList.add('scrolled');
+    } else {
+      container.classList.remove('scrolled');
+    }
   }
 }

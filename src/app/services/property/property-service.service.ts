@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class PropertyService {
-  private apiKey = '5a675e6be2msh8f066462f341289p19d8a3jsn8e9c92a5a9aa';
+  private apiKey = '775900e1e3msh5f0c112dd38acf5p1d863ajsn3f34a519fc18';
   private apiHost = 'airbnb13.p.rapidapi.com';
   private today = new Date();
 

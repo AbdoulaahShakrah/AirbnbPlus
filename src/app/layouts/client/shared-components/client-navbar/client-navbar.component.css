@@ -17,7 +17,7 @@
   transition: height 0.3s ease, padding 0.3s ease;
 }
 
-/* Container do parte de cima do nav bar que contém logo tipo e buttão e simblo do login */
+/* Container do parte de cima do nav bar que contém logo tipo e botão e símbolo do login */
 .headerContainer {
   display: flex;
   flex-direction: row;
@@ -50,7 +50,7 @@
   font-size: 17px;
 }
 
-/* O logo tipo que apartida vai mudar *****************/
+/* O logotipo que, a partir daqui, será alterado */
 .navBarContainer .headerContainer .side1 p {
   color: rgba(255, 143, 15, 0.878);
   font-size: 2.3rem;
@@ -95,7 +95,7 @@
   position: relative;
 }
 
-/* Menu que vai exibir quando o buttão é clicado */
+/* Menu que vai exibir quando o botão é clicado */
 .hosts .menu {
   position: absolute;
   top: 50px;
@@ -111,11 +111,12 @@
 .menu .menuItem {
   display: flex;
   align-items: center;
-  gap: 5px;
+  justify-content: center;
+  gap: 10px;
   margin-bottom: 10px;
 }
 
-/* Estilo para os buttões do menu */
+/* Estilo para os botões do menu */
 .hosts .menu .menuItem .incrementBtn,
 .hosts .menu .menuItem .decrementBtn {
   width: 20px;
@@ -134,32 +135,31 @@
 .hosts .menuItem span {
   margin: 0 10px;
   font-size: 16px;
+  border: 1px solid black;
+  padding: 2px;
+  background-color: chartreuse;
 }
 
-/* Estilo para o icon de pesquisa */
+/* Estilo para o ícone de pesquisa */
 .searchIcon {
   cursor: pointer;
   font-size: 2rem;
   color: black;
 }
 
-/* hovers */
+/* Hovers */
 .searchContainer select:hover,
 .searchContainer .hostsBtn:hover,
 .searchContainer input:hover,
 .incrementBtn:hover,
 .decrementBtn:hover,
-.hostLogin:hover {
+.hostLogin:hover,
+.searchIcon:hover {
   background-color: #f3ecec;
   box-shadow: 0 0 10px 5px rgba(128, 128, 128, 0.7);
   transform: translateY(2px);
   transition: 500ms;
   letter-spacing: 1px;
-}
-.searchIcon:hover{
-  color: #333;
-  transform: translateY(2px);
-  transition: 500ms;
 }
 
 /* Reduz a altura da navbar ao fazer scroll */
@@ -174,7 +174,7 @@
   width: 70%;
 }
 
-/* Forçar que seja de mesma cor que os outros */
+/* Forçar que seja da mesma cor que os outros */
 .hostsBtn {
   background-color: #fff;
 }
@@ -186,15 +186,6 @@
   .searchContainer {
     width: 90%;
     margin: 0 50px;
-  }
-}
-
-@media (max-width: 970px) {
-  .navBarContainer {
-    height: auto;
-  }
-  .searchContainer input, .hosts .hostsBtn {
-    width: 120px;
   }
 }
 
@@ -249,25 +240,11 @@
     height: auto;
   }
 
-  .headerContainer {
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  .searchContainer {
-    flex-direction: column;
-    width: 100%;
-    margin: 0;
-    padding: 10px;
-  }
-
   .searchContainer input,
   .hosts .hostsBtn {
-    width: 100%;
+    width: 400px;
   }
-
-  .hosts .menu {
+  .menu {
     top: 40px;
     left: 50%;
     transform: translateX(-50%);
