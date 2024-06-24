@@ -23,6 +23,8 @@
     box-sizing: border-box;
     margin-bottom: 16px;
     gap: 50px;
+    justify-content: center;
+    align-items: center;
 }
 
 .my-props img {
@@ -102,13 +104,29 @@
     background-color: #e53935;
 }
 
-
 @media (max-width: 1020px) {
-    .my-props{
+    .my-props {
         flex-direction: column;
+        width: 400px;
     }
-    .my-props img{
+    
+    .my-props img {
+        width: 100%;
+        height: auto;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 16px;
     }
+}
+
+@media (max-width: 480px) {
+    .my-props {
+        flex-direction: column;
+        width: 250px;
+    }
+
+    .top-details {
+        gap: 40px;
+    }
+
 }

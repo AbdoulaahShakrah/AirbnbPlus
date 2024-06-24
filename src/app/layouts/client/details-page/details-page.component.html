@@ -2,7 +2,15 @@
 
 <div *ngIf="selectedProperty !== undefined; else content" class="container">
   <div class="propertyResume">
-    <p>Alojamento 2:2 adultos + 1 criança</p>
+    <p>
+      Alojamento para:
+      {{ adults !== 0 ? adults + " adultos" : 'nenhum' }}
+      {{ babies !== 0 ? ', ' + babies + ' bebês' : '' }}
+      {{ animals !== 0 ? ', ' + animals + ' animais' : '' }}
+    </p>
+
+
+
   </div>
   <div class="slider-location">
     <div class="slider-wrapper" #sliderWrapper>
@@ -20,32 +28,36 @@
   </div>
 
   <div class="propertyDetails">
-    <div class="left-section">
-      <div class="cancelDetails">
-        <div class="text">
-          <p>{{ selectedProperty?.cancelPolicy }}</p>
-        </div>
-        <div class="cancelSymbol">
-          <i class="fa fa-calendar" aria-hidden="true"></i>
-        </div>
+    <div class="commodities-container">
+      <div class="title">
+        <p>O que este espaço oferece</p>
       </div>
-
-      <div class="commodities-container">
-        <div class="title">
-          <p>Comodidades</p>
-        </div>
-        <div class="commodities" *ngIf="selectedProperty?.previewAmenities?.length">
-          <div *ngFor="let amenity of selectedProperty?.previewAmenities" class="commodity-item">
-            <i [class]="amenity" aria-hidden="true"></i> {{ amenity }}
-          </div>
-        </div>
-        <div *ngIf="!(selectedProperty?.previewAmenities?.length)">
-          <p>Nenhuma comodidade disponível.</p>
+      <div class="commodities" *ngIf="selectedProperty?.previewAmenities?.length">
+        <div *ngFor="let amenity of selectedProperty?.previewAmenities" class="commodity-item">
+          {{ amenity }}
         </div>
       </div>
     </div>
 
-    <div class="rightside">
+    <div class="property-info">
+      <div class="info-item">
+        <p><strong>Tipo:</strong> {{ selectedProperty?.type }}</p>
+        <p><strong>Bairros:</strong> {{ selectedProperty?.neighborhood }}</p>
+        <p><strong>Banhos:</strong> {{ selectedProperty?.bathrooms }}</p>
+        <p><strong>Quartos:</strong> {{ selectedProperty?.bedrooms }}</p>
+        <p><strong>Camas:</strong> {{ selectedProperty?.beds }}</p>
+      </div>
+      <div class="info-item">
+        <p><strong>Superhost:</strong> {{ selectedProperty?.isSuperhost ? 'Sim' : 'Não' }}</p>
+        <p><strong>Encontrar Raramente:</strong> {{ selectedProperty?.rareFind ? 'Sim' : 'Não' }}</p>
+        <p><strong>Capacidade:</strong> {{ selectedProperty?.persons }} pessoas</p>
+        <p><strong>Avaliações:</strong> {{ selectedProperty?.reviewsCount }}</p>
+        <p><strong>Classificação:</strong> {{ selectedProperty?.rating }}</p>
+      </div>
+    </div>
+
+    <div class="price-info">
+      <p class="price-per-night">$ {{ selectedProperty?.amount }} / noite</p>
       <div class="datesbox">
         <div class="dates">
           <p class="text">Check-in</p>
@@ -58,13 +70,16 @@
       </div>
       <div class="hosts-num">
         <p class="host-text">Hóspedes</p>
-        <p class="hosts">2 Adultos, 1 Criança</p>
+        <p class="hosts">4 adultos, 2 bebês</p>
       </div>
-      <button class="reserve-btn">Reservar</button>
+      <a href="{{selectedProperty?.deeplink}}" target="_blank">
+        <button class="reserve-btn">Reservar</button>
+      </a>
       <div class="payment-value">
-        <p class="value-text">Valor a pagar</p>
-        <p class="calc-value">{{selectedProperty?.price_title}}</p>
-        <p class="total-value">${{selectedProperty?.amount}}</p>
+        <p class="value-text">€ {{ selectedProperty?.price_title }}</p>
+        <p class="calc-value">Taxa de limpeza: $ 12</p>
+        <p class="calc-value">Taxa de serviço da Airbnb: $ 15</p>
+        <p class="total-value">Total: {{ selectedProperty?.amount }}</p>
       </div>
     </div>
   </div>

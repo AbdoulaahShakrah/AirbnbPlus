@@ -1,6 +1,6 @@
 <div class="container">
   <div *ngFor="let property of properties; let i = index" class="property-card-container">
-    <a (click)="showPropertyDetails(property)">
+    <a (click)="showPropertyDetails(property)" target="_blank">
       <div class="propertyImage">
         <img [src]="property.images[0]" alt="Property Image {{property.id}}">
       </div>

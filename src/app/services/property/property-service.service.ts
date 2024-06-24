@@ -40,7 +40,7 @@ checkout=2025-01-18&adults=2&children=0&infants=0&pets=0&page=1&currency=USD
     },
   };
 
-  private getTodayDate(todayDate: Date) {
+  public getTodayDate(todayDate: Date) {
     const year = todayDate.getFullYear();
     const month = String(todayDate.getMonth() + 1).padStart(2, '0'); // padStart para fazer sempre de dois digitos
     const day = String(todayDate.getDate()).padStart(2, '0');
@@ -131,7 +131,6 @@ checkout=2025-01-18&adults=2&children=0&infants=0&pets=0&page=1&currency=USD
       })
     );
   }
-
   private mapToProperties(result: any): Property[] {
     return result.results.map((item: any) => ({
       id: item.id,
@@ -144,6 +143,18 @@ checkout=2025-01-18&adults=2&children=0&infants=0&pets=0&page=1&currency=USD
       price_title: item.price.priceItems?.[0]?.title,
       amount: item.price?.total || 0,
       rating: item.rating || 0,
+      deeplink: item.deeplink || "#",
+      bathrooms: item.bathrooms,
+      bedrooms: item.bedrooms,
+      beds: item.beds,
+      neighborhood: item.neighborhood,
+      isSuperhost: item.isSuperhost,
+      rareFind: item.rareFind,
+      persons: item.persons,
+      reviewsCount: item.reviewsCount,
+      type: item.type,
+      hostThumbnail: item.hostThumbnail
     }));
   }
+  
 }

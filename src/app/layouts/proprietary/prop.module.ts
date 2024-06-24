@@ -7,6 +7,7 @@ import { PropFooterComponent } from './shared-components/prop-footer/prop-footer
 import { FormContentComponent } from './form/form-content/form-content.component';
 import { MyproprietariesComponent } from './myproprietaries/myproprietaries.component';
 import { MyproprietaryCardComponent } from './myproprietaries/myproprietary-card/myproprietary-card.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,11 +16,13 @@ import { MyproprietaryCardComponent } from './myproprietaries/myproprietary-card
     PropFooterComponent,
     FormContentComponent,
     MyproprietariesComponent,
-    MyproprietaryCardComponent
+    MyproprietaryCardComponent,
+    FormContentComponent 
   ],
   imports: [
     CommonModule,
     PropRoutingModule,
+    ReactiveFormsModule 
   ],
   exports:[
     PropNavbarComponent,

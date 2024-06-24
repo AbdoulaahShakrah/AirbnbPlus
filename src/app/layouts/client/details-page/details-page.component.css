@@ -1,289 +1,420 @@
 .container {
-    width: 95%;
-    padding-top: 120px;
-    margin: 40px auto;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    gap: 40px;
-    padding-bottom: 50px;
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 150px;
+  padding-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.propertyResume {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.slider-location {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.slider-wrapper {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.location {
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+}
+
+.slide-button {
+  position: absolute;
+  top: 50%;
+  outline: none;
+  border: none;
+  height: 50px;
+  width: 50px;
+  z-index: 5;
+  color: #fff;
+  display: flex;
+  cursor: pointer;
+  font-size: 2.2rem;
+  background: #0056b3;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.3s ease;
+}
+
+.slide-button:hover {
+  background: #004080;
+}
+
+#prev-slide {
+  left: 10px;
+}
+
+#next-slide {
+  right: 10px;
+}
+
+.image-list {
+  display: flex;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  overflow-y: hidden;
+  width: 100%;
+}
+
+.image-list::-webkit-scrollbar {
+  display: none;
+}
+
+.image-item {
+  min-width: 300px;
+  height: 400px;
+  object-fit: cover;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.image-item:hover {
+  transform: scale(1.05);
+}
+
+.propertyDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.commodities-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #f9f9f9;
+  width: 100%;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.commodities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.commodity-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.show-all-btn {
+  background: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.show-all-btn:hover {
+  background: #0056b3;
+}
+
+.property-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px; 
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+.price-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #f9f9f9;
+  width: 100%;
+}
+
+.price-per-night {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.datesbox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.dates {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+
+.date {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.hosts-num {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+
+.reserve-btn {
+  background: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.reserve-btn:hover {
+  background: #218838;
+}
+
+.payment-value {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+
+.value-text {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.calc-value {
+  font-size: 16px;
+}
+
+.total-value {
+  font-size: 20px;
+  font-weight: bold;
+  color: #dc3545;
+}
+
+.not-found-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.not-found-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #dc3545;
+}
+
+@media (max-width: 930px) {
+  .container {
+    padding-top: 100px;
+    padding-bottom: 30px;
+    margin-top: 210px    ;
   }
-  
-  .slider-location {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+
+  .propertyResume {
+    font-size: 16px;
   }
-  
-  .slider-wrapper {
-    position: relative;
-    display: flex;
-    overflow: hidden;
-  }
-  
+
   .location {
-    font: bold;
-    font-size: 30px;
-  }
-  
-  .slide-button {
-    position: absolute;
-    top: 50%;
-    outline: none;
-    border: none;
-    height: 50px;
-    width: 50px;
-    z-index: 5;
-    color: #fff;
-    display: flex;
-    cursor: pointer;
-    font-size: 2.2rem;
-    background: #0056b3;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transform: translateY(-50%);
-    transition: background-color 0.3s ease;
-  }
-  
-  .slide-button:hover {
-    background: #004080;
-  }
-  
-  #prev-slide {
-    left: 10px;
-  }
-  
-  #next-slide {
-    right: 10px;
-  }
-  
-  .image-list {
-    display: flex;
-    overflow-x: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    scroll-behavior: smooth;
-    overflow-y: hidden;
-  }
-  
-  .image-list::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .image-item {
-    min-width: 325px;
-    height: 400px;
-    object-fit: cover;
-    margin-right: 10px;
-    transition: transform 0.3s ease;
-  }
-  
-  .image-item:hover {
-    transform: scale(1.05);
-  }
-  
-  .propertyDetails {
-    display: flex;
-    gap: 50px;
-    justify-content: center;
-    align-items: flex-start;
-  }
-  
-  .left-section {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    flex: 1;
-  }
-  
-  .cancelDetails {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    padding: 10px;
-    border: 1px solid black;
-    background-color: #32a852;
-    justify-content: center;
-    font-size: 25px;
-  }
-  
-  .commodities-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    border: 1px solid black;
-    padding: 15px;
-    font-size: 25px;
-    background-color: #f9f9f9;
-    width: 100%;
-  }
-  
-  .commodities {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-  }
-  
-  .commodity-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 5px 10px;
-    border: 1px solid black;
-    background-color: #e9e9e9;
     font-size: 20px;
   }
-  
-  .rightside {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
-    border: 1px solid black;
-    padding: 15px;
-    background-color: #f9f9f9;
-    flex: 1;
+
+  .slide-button {
+    font-size: 2rem;
+    height: 40px;
+    width: 40px;
   }
-  
-  .datesbox {
-    display: flex;
-    gap: 10px;
-    width: 100%;
+
+  .image-item {
+    min-width: 200px;
+    height: 300px;
   }
-  
-  .dates {
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid black;
-    padding: 10px;
-    gap: 10px;
-    background-color: #e9e9e9;
-    width: 100%;
+
+  .commodities-container {
+    gap: 20px;
   }
-  
-  .dates p {
-    margin: 0;
-    white-space: nowrap;  /* Add this line to prevent text wrapping */
+
+  .title {
+    font-size: 24px;
   }
-  
-  .hosts-num {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-    border: 1px solid black;
-    padding: 10px;
-    gap: 10px;
-    background-color: #e9e9e9;
-  }
-  
-  .hosts-num p {
-    margin: 0;
-  }
-  
-  .reserve-btn {
-    background-color: #0056b3;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
-    text-align: center;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .reserve-btn:hover {
-    background-color: #004080;
-  }
-  
-  .payment-value {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    border: 1px solid black;
-    padding: 10px;
-    background-color: #e9e9e9;
-  }
-  
-  .payment-value p {
-    margin: 0;
+
+  .commodities {
     font-size: 18px;
   }
-  
-  .total-value {
+
+  .commodity-item {
+    padding: 8px 12px;
+  }
+
+  .show-all-btn {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+
+  .property-info {
+    gap: 15px;
+  }
+
+  .info-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 8px 16px;
+  }
+
+  .price-per-night {
     font-size: 24px;
-    font-weight: bold;
-    color: #000;
   }
-  
-  .not-found-container {
-    padding-top: 180px;
+
+  .date {
+    font-size: 16px;
   }
-  
-  /* Styles for mobile and tablets */
-  @media only screen and (max-width: 1023px) {
-    .container{
-        padding-top: 90px;
-    }
-    .slide-button {
-      display: none !important;
-    }
-  
-    .image-list {
-      gap: 10px;
-      margin-bottom: 15px;
-    }
-  
-    .image-item {
-      width: 280px;
-      height: 380px;
-    }
+
+  .reserve-btn {
+    padding: 8px 16px;
+    font-size: 16px;
   }
-  
-  @media only screen and (max-width: 1420px) {
-    .container{
-        padding-top: 100px;
-    }
-    .commodity-item {
-      width: 100%;
-    }
+
+  .value-text {
+    font-size: 16px;
   }
-  
-  @media only screen and (max-width: 1110px) {
-    .container{
-        padding-top: 100px;
-    }
-    .propertyDetails {
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-    }
-    .cancelDetails .text {
-      font-size: 20px;
-    }
-    .commodity-item {
-      font-size: 20px;
-    }
+
+  .calc-value {
+    font-size: 14px;
   }
-  
-  @media (max-width: 768px) {
-    .container {
-        padding-top: 275px;
-    }
-    .datesbox {
-      flex-direction: column;
-      gap: 0;
-    }
-    .dates {
-      justify-content: space-between;
-      gap: 10px;
-    }
+
+  .total-value {
+    font-size: 18px;
   }
-  
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-top: 80px;
+    padding-bottom: 20px;
+  }
+
+  .propertyResume {
+    font-size: 14px;
+  }
+
+  .location {
+    font-size: 18px;
+  }
+
+  .slide-button {
+    font-size: 1.8rem;
+    height: 35px;
+    width: 35px;
+  }
+
+  .image-item {
+    min-width: 150px;
+    height: 250px;
+  }
+
+  .commodities-container {
+    gap: 10px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .commodities {
+    font-size: 14px;
+  }
+
+  .commodity-item {
+    padding: 5px 8px;
+  }
+
+  .show-all-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .property-info {
+    gap: 10px;
+  }
+
+  .info-item {
+    padding: 6px 12px;
+  }
+
+  .price-per-night {
+    font-size: 20px;
+  }
+
+  .date {
+    font-size: 14px;
+  }
+
+  .reserve-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .value-text {
+    font-size: 14px;
+  }
+
+  .calc-value {
+    font-size: 12px;
+  }
+
+  .total-value {
+    font-size: 16px;
+  }
+}

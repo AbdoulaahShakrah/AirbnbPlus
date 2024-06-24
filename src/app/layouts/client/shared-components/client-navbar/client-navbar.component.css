@@ -29,25 +29,29 @@
 
 /* Ajustar os elementos laterais */
 .side1, .side2 {
-  flex: 1;
   display: flex;
   align-items: center;
 }
 
 .side1 {
   justify-content: flex-start;
+  margin-left: 10px;
 }
 
 .side2 {
   justify-content: flex-end;
+  margin-right: 10px;
 }
 
 .navBarContainer .headerContainer .side2 .hostLogin {
   background-color: rgba(255, 143, 15, 0.878);
-  padding: 10px;
   border-radius: 20px;
   width: auto;
   font-size: 17px;
+  align-content: center;
+  padding: 2px;
+  height: 50px;
+  
 }
 
 /* O logotipo que, a partir daqui, será alterado */
@@ -55,6 +59,7 @@
   color: rgba(255, 143, 15, 0.878);
   font-size: 2.3rem;
   font-weight: bolder;
+  font-style: oblique;
 }
 
 /* Container da pesquisa */
@@ -84,11 +89,10 @@
   border: 1px solid #ccc;
   font-size: 0.9rem;
   text-align: center;
+  transition: 500ms;
+
 }
 
-.hosts .hostsBtn:focus {
-  outline: none;
-}
 
 /* Div de seleção do hosts com posição relativa ao pai */
 .hosts {
@@ -119,8 +123,8 @@
 /* Estilo para os botões do menu */
 .hosts .menu .menuItem .incrementBtn,
 .hosts .menu .menuItem .decrementBtn {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border: 1px solid #ccc;
   border-radius: 50%;
   background-color: #fff;
@@ -134,7 +138,7 @@
 
 .hosts .menuItem span {
   margin: 0 10px;
-  font-size: 16px;
+  font-size: 25px;
   border: 1px solid black;
   padding: 2px;
   background-color: chartreuse;
@@ -242,7 +246,7 @@
 
   .searchContainer input,
   .hosts .hostsBtn {
-    width: 400px;
+    width: 300px
   }
   .menu {
     top: 40px;

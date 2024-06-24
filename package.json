@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:AirbnbPlus": "node dist/airbnb-plus/server/server.mjs",
-    "server": "json-server --watch properties.json --port 1000"
+    "server": "json-server --watch property.json"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +24,7 @@
     "@angular/ssr": "^17.3.6",
     "bootstrap": "^5.3.3",
     "express": "^4.18.2",
+    "json-server": "^1.0.0-beta.1",
     "ngx-spinner": "^17.0.0",
     "rxjs": "~7.8.0",
     "simple-ng-loader": "^2.0.0",

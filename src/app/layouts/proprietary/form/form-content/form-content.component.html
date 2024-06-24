@@ -1,61 +1,106 @@
 <div class="form">
     <div class="form-heading">
-        <h2>Coloca a sua casa no nosso site e começa a ganhar dinheiro</h2>
+        <h2>List your home on our website and start earning money</h2>
     </div>
 
-    <div class="form-details">
+    <form class="form-details" [formGroup]="propertyForm" (ngSubmit)="onSubmit()">
         <div class="camp">
             <div>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required formControlName="name">
+                <label for="name">Name: *</label>
+                <input type="text" id="name" name="name" formControlName="name">
+                <div class="error" *ngIf="propertyForm?.get('name')?.invalid && propertyForm?.get('name')?.touched">Name is required</div>
             </div>
             <div>
-                <label for="number">Numero telemóvel:</label>
-                <input type="number" id="number" name="number" required formControlName="number">
+                <label for="number">Phone Number: *</label>
+                <input type="text" id="number" name="number" formControlName="number">
+                <div class="error" *ngIf="propertyForm?.get('number')?.invalid && propertyForm?.get('number')?.touched">Phone Number is required</div>
             </div>
         </div>
-        
+
         <div class="camp">
             <div>
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address" required formControlName="address">       
+                <label for="address">Address: *</label>
+                <input type="text" id="address" name="address" formControlName="address">
+                <div class="error" *ngIf="propertyForm?.get('address')?.invalid && propertyForm?.get('address')?.touched">Address is required</div>
             </div>
             <div>
-                <label for="price">Price:</label>
-                <input type="number" id="price" name="price" required formControlName="price">   
+                <label for="price">Price: *</label>
+                <input type="number" id="price" name="price" formControlName="price">
+                <div class="error" *ngIf="propertyForm?.get('price')?.invalid && propertyForm?.get('price')?.touched">Price is required</div>
             </div>
         </div>
-        
+
         <div class="camp">
             <div>
-                <label for="description">Description:</label>
-                <textarea id="description" name="description" required formControlName="description"></textarea>        
+                <label for="description">Description: *</label>
+                <textarea id="description" name="description" formControlName="description"></textarea>
+                <div class="error" *ngIf="propertyForm?.get('description')?.invalid && propertyForm?.get('description')?.touched">Description is required</div>
             </div>
             <div>
-                <label>Cancelamento antecipado:</label>
-                <input type="checkbox" id="hasCancel" name="hasCancel" formControlName="hasCancel">
-                <div>
-                    <label for="cancelDate">Cancel Date:</label>
-                    <input type="date" id="cancelDate" name="cancelDate" formControlName="cancelDate">       
-                </div>
+                <label for="cancelPolicy">Cancellation Policy: *</label>
+                <input type="text" id="cancelPolicy" name="cancelPolicy" formControlName="cancelPolicy">
+                <div class="error" *ngIf="propertyForm?.get('cancelPolicy')?.invalid && propertyForm?.get('cancelPolicy')?.touched">Cancellation Policy is required</div>
             </div>
         </div>
-        
-        <div class="camp">
+
+        <div class="camp-numbers">
             <div>
-                <label for="adultsNum">Number of Adults:</label>
+                <label for="adultsNum">Adults: *</label>
                 <input type="number" id="adultsNum" name="adultsNum" formControlName="adultsNum">
+                <div class="error" *ngIf="propertyForm?.get('adultsNum')?.invalid && propertyForm?.get('adultsNum')?.touched">Number of Adults is required</div>
             </div>
             <div>
-                <label for="childsNum">Number of Children:</label>
-                <input type="number" id="childsNum" name="childsNum" formControlName="childsNum">
+                <label for="childrenNum">Children: *</label>
+                <input type="number" id="childrenNum" name="childrenNum" formControlName="childrenNum">
+                <div class="error" *ngIf="propertyForm?.get('childrenNum')?.invalid && propertyForm?.get('childrenNum')?.touched">Number of Children is required</div>
             </div>
             <div>
-                <label for="babiesNum">Number of Babies:</label>
+                <label for="babiesNum">Babies: *</label>
                 <input type="number" id="babiesNum" name="babiesNum" formControlName="babiesNum">
+                <div class="error" *ngIf="propertyForm?.get('babiesNum')?.invalid && propertyForm?.get('babiesNum')?.touched">Number of Babies is required</div>
             </div>
         </div>
-        
+
+        <div class="camp-numbers">
+            <div>
+                <label for="bathrooms">Bathrooms: *</label>
+                <input type="number" id="bathrooms" name="bathrooms" formControlName="bathrooms">
+                <div class="error" *ngIf="propertyForm?.get('bathrooms')?.invalid && propertyForm?.get('bathrooms')?.touched">Number of Bathrooms is required</div>
+            </div>
+            <div>
+                <label for="bedrooms">Bedrooms: *</label>
+                <input type="number" id="bedrooms" name="bedrooms" formControlName="bedrooms">
+                <div class="error" *ngIf="propertyForm?.get('bedrooms')?.invalid && propertyForm?.get('bedrooms')?.touched">Number of Bedrooms is required</div>
+            </div>
+            <div>
+                <label for="beds">Beds: *</label>
+                <input type="number" id="beds" name="beds" formControlName="beds">
+                <div class="error" *ngIf="propertyForm?.get('beds')?.invalid && propertyForm?.get('beds')?.touched">Number of Beds is required</div>
+            </div>
+        </div>
+
+        <div class="camp">
+            <div>
+                <label for="neighborhood">Neighborhood:</label>
+                <input type="text" id="neighborhood" name="neighborhood" formControlName="neighborhood">
+            </div>
+            <div>
+                <label for="hostThumbnail">Host Thumbnail URL:</label>
+                <input type="text" id="hostThumbnail" name="hostThumbnail" formControlName="hostThumbnail">
+            </div>
+        </div>
+
+        <div class="checkbox-group">
+            <div class="checkbox-container">
+                <input type="checkbox" id="isSuperhost" name="isSuperhost" formControlName="isSuperhost">
+                <label for="isSuperhost">Is Superhost</label>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="rareFind" name="rareFind" formControlName="rareFind">
+                <label for="rareFind">Rare Find</label>
+            </div>
+        </div>
+
         <div class="checkbox-group">
             <div class="checkbox-container">
                 <input type="checkbox" id="hasWIFI" name="hasWIFI" formControlName="hasWIFI">
@@ -70,8 +115,8 @@
                 <label for="hasParking">Has Parking</label>
             </div>
             <div class="checkbox-container">
-                <input type="checkbox" id="hasSelfChekin" name="hasSelfChekin" formControlName="hasSelfChekin">
-                <label for="hasSelfChekin">Has Self Checkin</label>
+                <input type="checkbox" id="hasSelfCheckin" name="hasSelfCheckin" formControlName="hasSelfCheckin">
+                <label for="hasSelfCheckin">Has Self Checkin</label>
             </div>
             <div class="checkbox-container">
                 <input type="checkbox" id="hasWorkSpace" name="hasWorkSpace" formControlName="hasWorkSpace">
@@ -82,12 +127,15 @@
                 <label for="hasFridge">Has Fridge</label>
             </div>
         </div>
-        
+
         <div>
-            <label for="images">Images:</label>
+            <label for="images">Images: *</label>
             <input type="file" id="images" name="images" multiple formControlName="images">
+            <div class="error" *ngIf="propertyForm?.get('images')?.invalid && propertyForm?.get('images')?.touched">Images are required</div>
         </div>
-        
-        <button type="submit" class="submit-btn">Adicionar</button>
-    </div>
+
+        <button type="submit" class="submit-btn">Add Property</button>
+    </form>
+
+    <p class="required-note">* Required fields</p>
 </div>
