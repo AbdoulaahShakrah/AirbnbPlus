@@ -1,7 +1,7 @@
 import { Component, HostListener, ElementRef, Output, EventEmitter } from '@angular/core';
 import { MenuService } from '../../../../services/hostsMenu/host-menu.service';
 import { Property } from '../../../../interfaces/Property';
-import { PropertyService } from '../../../../services/property/property-service.service';
+import { PropertyService } from '../../../../services/property/property.service';
 import { Router } from '@angular/router';
 
 @Component({

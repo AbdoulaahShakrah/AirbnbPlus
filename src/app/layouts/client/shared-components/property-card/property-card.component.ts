@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { PropertyService } from '../../../../services/property/property-service.service';
+import { PropertyService } from '../../../../services/property/property.service';
 import { Property } from '../../../../interfaces/Property';
 import { Router } from '@angular/router';
 

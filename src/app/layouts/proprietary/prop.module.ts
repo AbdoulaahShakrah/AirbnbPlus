@@ -5,9 +5,9 @@ import { FormComponent } from './form/form.component';
 import { PropNavbarComponent } from './shared-components/prop-navbar/prop-navbar.component';
 import { PropFooterComponent } from './shared-components/prop-footer/prop-footer.component';
 import { FormContentComponent } from './form/form-content/form-content.component';
-import { MyproprietariesComponent } from './myproprietaries/myproprietaries.component';
-import { MyproprietaryCardComponent } from './myproprietaries/myproprietary-card/myproprietary-card.component';
+import { MyPropertiesCardComponent } from './myproperties/myproperties-card/myproperties-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MyPropertiesComponent } from './myproperties/myproperties.component';
 
 @NgModule({
   declarations: [
@@ -15,8 +15,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormComponent,
     PropFooterComponent,
     FormContentComponent,
-    MyproprietariesComponent,
-    MyproprietaryCardComponent,
+    MyPropertiesComponent,
+    MyPropertiesCardComponent,
     FormContentComponent 
   ],
   imports: [
@@ -30,4 +30,4 @@ import { ReactiveFormsModule } from '@angular/forms';
     PropFooterComponent
   ]
 })
-export class PropModule { }
+export class PropModule { } 

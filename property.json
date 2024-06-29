@@ -1,5 +1,86 @@
 {
-    "properties":[
-        
-    ]
+  "properties": [
+    {
+      "id": 0,
+      "url": "",
+      "name": "Casa de Ofir",
+      "city": "ofir, portugal",
+      "images": [
+        "assets/imgs/image.png"
+      ],
+      "previewAmenities": [
+        "Kitchen",
+        "Workspace",
+        "Fridge"
+      ],
+      "cancelPolicy": "não há canelamento",
+      "price_title": "200€ por noite",
+      "amount": 200,
+      "bathrooms": 2,
+      "bedrooms": 2,
+      "beds": 2,
+      "neighborhood": "Praia, ria, jardim",
+      "isSuperhost": true,
+      "rareFind": false,
+      "persons": 6,
+      "reviewsCount": 0,
+      "type": "",
+      "hostThumbnail": ""
+    },
+    {
+      "id": 0,
+      "url": "",
+      "name": "Casa de ronaldo",
+      "city": "madeira",
+      "images": [
+        "assets/imgs/login-background.png"
+      ],
+      "previewAmenities": [
+        "WIFI",
+        "Parking",
+        "Workspace"
+      ],
+      "cancelPolicy": "não há canelamento",
+      "price_title": "300€ por noite",
+      "amount": 300,
+      "bathrooms": 2,
+      "bedrooms": 2,
+      "beds": 2,
+      "neighborhood": "montanha",
+      "isSuperhost": true,
+      "rareFind": false,
+      "persons": 6,
+      "reviewsCount": 0,
+      "type": "",
+      "hostThumbnail": ""
+    },
+    {
+      "id": 0,
+      "url": "",
+      "name": "Casa de ronaldo",
+      "city": "madeira",
+      "images": [
+        "assets/imgs/image.png"
+      ],
+      "previewAmenities": [
+        "WIFI",
+        "Self Check-in",
+        "Workspace",
+        "Fridge"
+      ],
+      "cancelPolicy": "nada",
+      "price_title": "222€ por noite",
+      "amount": 222,
+      "bathrooms": 2,
+      "bedrooms": 2,
+      "beds": 2,
+      "neighborhood": "montanha",
+      "isSuperhost": false,
+      "rareFind": true,
+      "persons": 6,
+      "reviewsCount": 0,
+      "type": "",
+      "hostThumbnail": ""
+    }
+  ]
 }

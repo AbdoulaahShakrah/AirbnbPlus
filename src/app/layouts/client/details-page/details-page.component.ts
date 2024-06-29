@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef, AfterViewInit, OnInit, OnDestroy } from '@angular/core';
-import { PropertyService } from '../../../services/property/property-service.service';
+import { PropertyService } from '../../../services/property/property.service';
 import { Property } from '../../../interfaces/Property';
 import { Subscription } from 'rxjs';
 import { MenuService } from '../../../services/hostsMenu/host-menu.service';
