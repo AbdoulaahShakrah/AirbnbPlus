@@ -1,83 +1,54 @@
 {
   "properties": [
     {
-      "id": 0,
+      "id": "0",
       "url": "",
-      "name": "Casa de Ofir",
-      "city": "ofir, portugal",
+      "name": "test",
+      "city": "beja",
       "images": [
-        "assets/imgs/image.png"
+        "assets/imgs/image - Cópia.png"
       ],
       "previewAmenities": [
         "Kitchen",
         "Workspace",
         "Fridge"
       ],
-      "cancelPolicy": "não há canelamento",
-      "price_title": "200€ por noite",
-      "amount": 200,
+      "cancelPolicy": "test",
+      "price_title": "12134€ por noite",
+      "amount": 12134,
       "bathrooms": 2,
       "bedrooms": 2,
-      "beds": 2,
-      "neighborhood": "Praia, ria, jardim",
+      "beds": 23,
+      "neighborhood": "Alasi",
       "isSuperhost": true,
-      "rareFind": false,
-      "persons": 6,
-      "reviewsCount": 0,
-      "type": "",
-      "hostThumbnail": ""
-    },
-    {
-      "id": 0,
-      "url": "",
-      "name": "Casa de ronaldo",
-      "city": "madeira",
-      "images": [
-        "assets/imgs/login-background.png"
-      ],
-      "previewAmenities": [
-        "WIFI",
-        "Parking",
-        "Workspace"
-      ],
-      "cancelPolicy": "não há canelamento",
-      "price_title": "300€ por noite",
-      "amount": 300,
-      "bathrooms": 2,
-      "bedrooms": 2,
-      "beds": 2,
-      "neighborhood": "montanha",
-      "isSuperhost": true,
-      "rareFind": false,
-      "persons": 6,
-      "reviewsCount": 0,
-      "type": "",
-      "hostThumbnail": ""
-    },
-    {
-      "id": 0,
-      "url": "",
-      "name": "Casa de ronaldo",
-      "city": "madeira",
-      "images": [
-        "assets/imgs/image.png"
-      ],
-      "previewAmenities": [
-        "WIFI",
-        "Self Check-in",
-        "Workspace",
-        "Fridge"
-      ],
-      "cancelPolicy": "nada",
-      "price_title": "222€ por noite",
-      "amount": 222,
-      "bathrooms": 2,
-      "bedrooms": 2,
-      "beds": 2,
-      "neighborhood": "montanha",
-      "isSuperhost": false,
       "rareFind": true,
       "persons": 6,
+      "reviewsCount": 0,
+      "type": "",
+      "hostThumbnail": ""
+    },
+    {
+      "id": "0",
+      "url": "",
+      "name": "test",
+      "city": "beja",
+      "images": [
+        "assets/imgs/image - Cópia.png"
+      ],
+      "previewAmenities": [
+        "WIFI",
+        "Workspace"
+      ],
+      "cancelPolicy": "test",
+      "price_title": "22€ por noite",
+      "amount": 22,
+      "bathrooms": 2,
+      "bedrooms": 2,
+      "beds": 2,
+      "neighborhood": "test",
+      "isSuperhost": false,
+      "rareFind": true,
+      "persons": 4,
       "reviewsCount": 0,
       "type": "",
       "hostThumbnail": ""

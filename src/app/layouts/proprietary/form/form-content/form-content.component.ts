@@ -40,9 +40,16 @@ export class FormContentComponent{
     });
     console.log(this.propertyForm.value);
   }
+
+  onFileChange(event: any): void {
+    const files: File[] = Array.from(event.target.files);
+    const images: string[] = files.map(file => `assets/imgs/${file.name}`);
+    this.propertyForm.patchValue({ images: images.join(',') });
+  }
   
   toProperty(formValue: any): Property {
     const images = formValue.images.split(",").map((image: string) => image.replace("C:\\fakepath\\", "assets/imgs/")); 
+    console.log(images);
     return {  
       id: 0,
       url: '',
@@ -51,7 +58,7 @@ export class FormContentComponent{
       images: images,
       previewAmenities: this.getAmenities(formValue),
       cancelPolicy: formValue.cancelPolicy,
-      price_title: `${formValue.price}€ por noite`,
+      price_title: `$${formValue.price} x 1 night `,
       amount: Number(formValue.price),
       bathrooms: Number(formValue.bathrooms),
       bedrooms: Number(formValue.bedrooms),
@@ -100,6 +107,7 @@ export class FormContentComponent{
     });
   }
 
+  
 
   postProperty(myProperty: Property){
     this.myPropertyService.post(myProperty)

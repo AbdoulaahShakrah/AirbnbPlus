@@ -17,4 +17,13 @@ export class MyPropertiesCardComponent implements OnInit {
     this.myPropertyService.get().subscribe((properties) => 
       this.myProperties = properties);
   }
+
+
+  
+  removeMyProperty(myProperty: Property){
+    this.myProperties = this.myProperties.filter(property => property.id !== myProperty.id);
+    this.myPropertyService.remove(myProperty.id).subscribe(() => {
+    }, (error) => {
+      console.error('An error occurred:', error);
+    });}
 }

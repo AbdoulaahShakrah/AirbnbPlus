@@ -66,21 +66,13 @@ checkout=2025-01-18&adults=2&children=0&infants=0&pets=0&page=1&currency=USD
 
   // Observables inscritos recebem o valor do selectedProperty
   private selectedProperty = new BehaviorSubject<Property | null>(null);
-
-  // Adicionar um BehaviorSubject para os resultados da pesquisa
-  private searchResults = new BehaviorSubject<Property[]>([]);
-
+  
   setSelectedProperty(property: Property) {
     this.selectedProperty.next(property);
   }
 
   getSelectedProperty(): Observable<Property | null> {
     return this.selectedProperty.asObservable();
-  }
-
-  // Método para obter os resultados da pesquisa
-  getSearchResults(): Observable<Property[]> {
-    return this.searchResults.asObservable();
   }
 
   async fetchProperties(url: string): Promise<any> {
@@ -126,7 +118,6 @@ checkout=2025-01-18&adults=2&children=0&infants=0&pets=0&page=1&currency=USD
     return from(this.fetchProperties(url)).pipe(
       map((result) => {
         const properties = this.mapToProperties(result);
-        this.searchResults.next(properties); // Atualizar o BehaviorSubject com os novos resultados da pesquisa
         return properties;
       })
     );

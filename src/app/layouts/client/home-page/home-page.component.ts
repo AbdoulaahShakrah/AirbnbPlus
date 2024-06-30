@@ -7,20 +7,20 @@ import { PropertyService } from '../../../services/property/property.service';
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
 })
-export class HomePageComponent implements OnInit{
-  constructor(private propertyService: PropertyService){}
-  ngOnInit(): void {
-    this.homePageSetUp()
-  }
-  
+export class HomePageComponent implements OnInit {
+  constructor(private propertyService: PropertyService) {}
   
   properties: Property[] = [];
   
+  ngOnInit(): void {
+    this.homePageSetUp();
+  }
+  
   homePageSetUp(): void {
-    const sub = this.propertyService.homePageSetUp().subscribe(
+    this.propertyService.homePageSetUp().subscribe(
       (response) => {
         this.properties = response;
-        console.log(response)
+        console.log(response);
       },
       (error) => {
         console.error('Error fetching property data', error);

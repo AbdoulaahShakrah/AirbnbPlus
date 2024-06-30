@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Property } from '../../interfaces/Property';
 import { Observable, catchError, tap, throwError } from 'rxjs';
@@ -43,10 +43,15 @@ export class MyPropertyService {
         return throwError('Something went wrong; please try again later.');
       })
     );
-  }
-
-  onSearch(location: string): Property[]{
-    this.get().subscribe()
-    return this.myProperties.filter(property => property.city.toLowerCase().includes(location.toLowerCase()))
+  } 
+  
+  onSearch(location: string): Observable<Property[]> {
+    const params = new HttpParams().set('city', location);
+    return this.http.get<Property[]>(this.apiUrl, { params }).pipe(
+      catchError((error) => {
+        console.error('An error occurred:', error);
+        return throwError('Something went wrong; please try again later.');
+      })
+    );
   }
 }

@@ -20,7 +20,8 @@ export class DetailsPageComponent implements OnInit, OnDestroy {
   adults: number | 0 = 0;
   babies: number | 0 = 0;
   animals: number | 0 = 0;
-  date = new Date
+  date = new Date;
+
  
   constructor(private propertyService: PropertyService, private hostService: MenuService) {}
 

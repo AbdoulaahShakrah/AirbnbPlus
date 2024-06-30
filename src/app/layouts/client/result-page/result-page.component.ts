@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Property } from '../../../interfaces/Property';
 import { PropertyService } from '../../../services/property/property.service';
+import { AllPropertiesService } from '../../../services/allProperties/all-properties.service';
 
 @Component({
   selector: 'app-result-page',
@@ -10,11 +11,11 @@ import { PropertyService } from '../../../services/property/property.service';
 export class ResultPageComponent implements OnInit {
   properties: Property[] = [];
 
-  constructor(private propertyService: PropertyService) {}
+  constructor(private allPropertiesService: AllPropertiesService) {}
 
   ngOnInit() {
     // Subscrever aos resultados da pesquisa
-    this.propertyService.getSearchResults().subscribe((properties) => {
+    this.allPropertiesService.getSearchResults().subscribe((properties) => {
       this.properties = properties;
       console.log("Propriedades recebidas na página de resultados:", properties);
     });

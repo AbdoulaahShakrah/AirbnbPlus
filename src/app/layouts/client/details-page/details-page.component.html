@@ -70,16 +70,16 @@
       </div>
       <div class="hosts-num">
         <p class="host-text">Hóspedes</p>
-        <p class="hosts">4 adultos, 2 bebês</p>
+        <p class="hosts">{{ adults !== 0 ? adults + " adultos" : 'nenhum' }}
+          {{ babies !== 0 ? ', ' + babies + ' bebês' : '' }}
+          {{ animals !== 0 ? ', ' + animals + ' animais' : '' }}</p>
       </div>
       <a href="{{selectedProperty?.deeplink}}" target="_blank">
         <button class="reserve-btn">Reservar</button>
       </a>
       <div class="payment-value">
-        <p class="value-text">€ {{ selectedProperty?.price_title }}</p>
-        <p class="calc-value">Taxa de limpeza: $ 12</p>
-        <p class="calc-value">Taxa de serviço da Airbnb: $ 15</p>
-        <p class="total-value">Total: {{ selectedProperty?.amount }}</p>
+        <p class="value-text"> {{ selectedProperty?.price_title }}</p>
+        <p class="total-value">Total value: $ {{ selectedProperty?.amount }} (Already with taxes)</p>
       </div>
     </div>
   </div>
