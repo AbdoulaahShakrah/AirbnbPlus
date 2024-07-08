@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Property } from '../../../interfaces/Property';
-import { PropertyService } from '../../../services/property/property.service';
 import { AllPropertiesService } from '../../../services/allProperties/all-properties.service';
 
 @Component({

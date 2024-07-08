@@ -36,14 +36,15 @@ export class MyPropertyService {
     );
   }
 
-  remove(id: number) {
+  
+  remove(id: number): Observable<any> {
     return this.http.delete<Property>(`${this.apiUrl}/${id}`).pipe(
       catchError((error) => {
         console.error('An error occurred:', error);
         return throwError('Something went wrong; please try again later.');
       })
     );
-  } 
+  }
   
   onSearch(location: string): Observable<Property[]> {
     const params = new HttpParams().set('city', location);

@@ -1,7 +1,8 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { PropertyService } from '../../../../services/property/property.service';
 import { Property } from '../../../../interfaces/Property';
 import { Router } from '@angular/router';
+import { prototype } from 'events';
 
 @Component({
   selector: 'app-property-card',
@@ -26,6 +27,9 @@ export class PropertyCardComponent implements OnChanges {
 
   showPropertyDetails(property: Property) {
     this.propertyService.setSelectedProperty(property);
-    this.router.navigateByUrl('property/' + property.id);
+    //this.router.navigateByUrl('property/' + property.id);
+    this.router.navigate(['property/' + property.id], {
+      state: property
+    })
   }
 }

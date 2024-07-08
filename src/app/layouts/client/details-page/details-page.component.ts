@@ -32,6 +32,7 @@ export class DetailsPageComponent implements OnInit, OnDestroy {
     this.adults = this.hostService.adults || 0;
     this.babies = this.hostService.babies || 0;
     this.animals = this.hostService.animals || 0;
+    this.selectedProperty = history.state;
   }
 
   getProperty(): void {

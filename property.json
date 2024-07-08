@@ -1,54 +1,34 @@
 {
   "properties": [
     {
-      "id": "0",
+      "id": 1719948470472,
       "url": "",
-      "name": "test",
-      "city": "beja",
+      "name": "Casa dos Reis",
+      "city": "Beja",
       "images": [
-        "assets/imgs/image - Cópia.png"
-      ],
-      "previewAmenities": [
-        "Kitchen",
-        "Workspace",
-        "Fridge"
-      ],
-      "cancelPolicy": "test",
-      "price_title": "12134€ por noite",
-      "amount": 12134,
-      "bathrooms": 2,
-      "bedrooms": 2,
-      "beds": 23,
-      "neighborhood": "Alasi",
-      "isSuperhost": true,
-      "rareFind": true,
-      "persons": 6,
-      "reviewsCount": 0,
-      "type": "",
-      "hostThumbnail": ""
-    },
-    {
-      "id": "0",
-      "url": "",
-      "name": "test",
-      "city": "beja",
-      "images": [
-        "assets/imgs/image - Cópia.png"
+        "assets/imgs/house1.jpg",
+        "assets/imgs/house2.jpg",
+        "assets/imgs/house3.jpg",
+        "assets/imgs/house4.jpg",
+        "assets/imgs/house5.jpg",
+        "assets/imgs/house6.jpg",
+        "assets/imgs/house7.png"
       ],
       "previewAmenities": [
         "WIFI",
-        "Workspace"
+        "Kitchen",
+        "Fridge"
       ],
-      "cancelPolicy": "test",
-      "price_title": "22€ por noite",
-      "amount": 22,
+      "cancelPolicy": "não há cancelamento",
+      "price_title": "$100 x 1 night ",
+      "amount": 100,
       "bathrooms": 2,
-      "bedrooms": 2,
-      "beds": 2,
-      "neighborhood": "test",
-      "isSuperhost": false,
-      "rareFind": true,
-      "persons": 4,
+      "bedrooms": 5,
+      "beds": 6,
+      "neighborhood": "Praia, cafés",
+      "isSuperhost": true,
+      "rareFind": false,
+      "persons": 11,
       "reviewsCount": 0,
       "type": "",
       "hostThumbnail": ""

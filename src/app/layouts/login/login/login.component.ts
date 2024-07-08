@@ -24,7 +24,7 @@ export class LoginComponent {
     this.http.post('/api/User/Login', this.loginObj)
       .subscribe((res: any) => {
         if (res.result) {
-          this.router.navigateByUrl('/form')
+          this.router.navigateByUrl('/my-properties')
           console.log(res.result);
         } else {
           this.loginError = true;

@@ -3,14 +3,11 @@
 <div *ngIf="selectedProperty !== undefined; else content" class="container">
   <div class="propertyResume">
     <p>
-      Alojamento para:
-      {{ adults !== 0 ? adults + " adultos" : 'nenhum' }}
-      {{ babies !== 0 ? ', ' + babies + ' bebês' : '' }}
-      {{ animals !== 0 ? ', ' + animals + ' animais' : '' }}
+      Accommodation for:
+      {{ adults !== 0 ? adults + " adults" : 'none' }}
+      {{ babies !== 0 ? ', ' + babies + ' babies' : '' }}
+      {{ animals !== 0 ? ', ' + animals + ' animals' : '' }}
     </p>
-
-
-
   </div>
   <div class="slider-location">
     <div class="slider-wrapper" #sliderWrapper>
@@ -30,7 +27,7 @@
   <div class="propertyDetails">
     <div class="commodities-container">
       <div class="title">
-        <p>O que este espaço oferece</p>
+        <p>What this place offers</p>
       </div>
       <div class="commodities" *ngIf="selectedProperty?.previewAmenities?.length">
         <div *ngFor="let amenity of selectedProperty?.previewAmenities" class="commodity-item">
@@ -41,23 +38,23 @@
 
     <div class="property-info">
       <div class="info-item">
-        <p><strong>Tipo:</strong> {{ selectedProperty?.type }}</p>
-        <p><strong>Bairros:</strong> {{ selectedProperty?.neighborhood }}</p>
-        <p><strong>Banhos:</strong> {{ selectedProperty?.bathrooms }}</p>
-        <p><strong>Quartos:</strong> {{ selectedProperty?.bedrooms }}</p>
-        <p><strong>Camas:</strong> {{ selectedProperty?.beds }}</p>
+        <p><strong>Type:</strong> {{ selectedProperty?.type }}</p>
+        <p><strong>Neighborhood:</strong> {{ selectedProperty?.neighborhood }}</p>
+        <p><strong>Bathrooms:</strong> {{ selectedProperty?.bathrooms }}</p>
+        <p><strong>Bedrooms:</strong> {{ selectedProperty?.bedrooms }}</p>
+        <p><strong>Beds:</strong> {{ selectedProperty?.beds }}</p>
       </div>
       <div class="info-item">
-        <p><strong>Superhost:</strong> {{ selectedProperty?.isSuperhost ? 'Sim' : 'Não' }}</p>
-        <p><strong>Encontrar Raramente:</strong> {{ selectedProperty?.rareFind ? 'Sim' : 'Não' }}</p>
-        <p><strong>Capacidade:</strong> {{ selectedProperty?.persons }} pessoas</p>
-        <p><strong>Avaliações:</strong> {{ selectedProperty?.reviewsCount }}</p>
-        <p><strong>Classificação:</strong> {{ selectedProperty?.rating }}</p>
+        <p><strong>Superhost:</strong> {{ selectedProperty?.isSuperhost ? 'Yes' : 'No' }}</p>
+        <p><strong>Rare Find:</strong> {{ selectedProperty?.rareFind ? 'Yes' : 'No' }}</p>
+        <p><strong>Capacity:</strong> {{ selectedProperty?.persons }} people</p>
+        <p><strong>Reviews:</strong> {{ selectedProperty?.reviewsCount }}</p>
+        <p><strong>Rating:</strong> {{ selectedProperty?.rating }}</p>
       </div>
     </div>
 
     <div class="price-info">
-      <p class="price-per-night">$ {{ selectedProperty?.amount }} / noite</p>
+      <p class="price-per-night">$ {{ selectedProperty?.amount }} / night</p>
       <div class="datesbox">
         <div class="dates">
           <p class="text">Check-in</p>
@@ -69,13 +66,13 @@
         </div>
       </div>
       <div class="hosts-num">
-        <p class="host-text">Hóspedes</p>
-        <p class="hosts">{{ adults !== 0 ? adults + " adultos" : 'nenhum' }}
-          {{ babies !== 0 ? ', ' + babies + ' bebês' : '' }}
-          {{ animals !== 0 ? ', ' + animals + ' animais' : '' }}</p>
+        <p class="host-text">Guests</p>
+        <p class="hosts">{{ adults !== 0 ? adults + " adults" : 'none' }}
+          {{ babies !== 0 ? ', ' + babies + ' babies' : '' }}
+          {{ animals !== 0 ? ', ' + animals + ' animals' : '' }}</p>
       </div>
       <a href="{{selectedProperty?.deeplink}}" target="_blank">
-        <button class="reserve-btn">Reservar</button>
+        <button class="reserve-btn">Reserve</button>
       </a>
       <div class="payment-value">
         <p class="value-text"> {{ selectedProperty?.price_title }}</p>
@@ -89,6 +86,6 @@
 
 <ng-template #content>
   <div class="not-found-container">
-    <p class="not-found-text">NADA FOI ENCONTRADO.</p>
+    <p class="not-found-text">NOTHING FOUND.</p>
   </div>
 </ng-template>

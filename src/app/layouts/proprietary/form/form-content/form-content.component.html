@@ -7,12 +7,12 @@
         <div class="camp">
             <div>
                 <label for="name">Property Name: *</label>
-                <input type="text" id="name" name="name" formControlName="name">
+                <input type="text" id="name" name="name" formControlName="name" aria-label="Property Name">
                 <div class="error" *ngIf="propertyForm?.get('name')?.invalid && propertyForm?.get('name')?.touched">Name is required</div>
             </div>
             <div>
                 <label for="number">Phone Number: *</label>
-                <input type="text" id="number" name="number" formControlName="number">
+                <input type="text" id="number" name="number" formControlName="number" aria-label="Phone Number">
                 <div class="error" *ngIf="propertyForm?.get('number')?.invalid && propertyForm?.get('number')?.touched">Phone Number is required</div>
             </div>
         </div>
@@ -20,12 +20,12 @@
         <div class="camp">
             <div>
                 <label for="address">City: *</label>
-                <input type="text" id="address" name="address" formControlName="address">
+                <input type="text" id="address" name="address" formControlName="address" aria-label="City">
                 <div class="error" *ngIf="propertyForm?.get('address')?.invalid && propertyForm?.get('address')?.touched">City is required</div>
             </div>
             <div>
                 <label for="price">Price: ($) *</label>
-                <input type="number" id="price" name="price" formControlName="price">
+                <input type="number" id="price" name="price" formControlName="price" aria-label="Price">
                 <div class="error" *ngIf="propertyForm?.get('price')?.invalid && propertyForm?.get('price')?.touched">Price is required</div>
             </div>
         </div>
@@ -33,12 +33,12 @@
         <div class="camp">
             <div>
                 <label for="description">Description: *</label>
-                <textarea id="description" name="description" formControlName="description"></textarea>
+                <textarea id="description" name="description" formControlName="description" aria-label="Description"></textarea>
                 <div class="error" *ngIf="propertyForm?.get('description')?.invalid && propertyForm?.get('description')?.touched">Description is required</div>
             </div>
             <div>
                 <label for="cancelPolicy">Cancellation Policy: *</label>
-                <input type="text" id="cancelPolicy" name="cancelPolicy" formControlName="cancelPolicy">
+                <input type="text" id="cancelPolicy" name="cancelPolicy" formControlName="cancelPolicy" aria-label="Cancellation Policy">
                 <div class="error" *ngIf="propertyForm?.get('cancelPolicy')?.invalid && propertyForm?.get('cancelPolicy')?.touched">Cancellation Policy is required</div>
             </div>
         </div>
@@ -46,17 +46,17 @@
         <div class="camp-numbers">
             <div>
                 <label for="adultsNum">Adults: *</label>
-                <input type="number" id="adultsNum" name="adultsNum" formControlName="adultsNum">
+                <input type="number" id="adultsNum" name="adultsNum" formControlName="adultsNum" aria-label="Number of Adults">
                 <div class="error" *ngIf="propertyForm?.get('adultsNum')?.invalid && propertyForm?.get('adultsNum')?.touched">Number of Adults is required</div>
             </div>
             <div>
                 <label for="childrenNum">Children: *</label>
-                <input type="number" id="childrenNum" name="childrenNum" formControlName="childrenNum">
+                <input type="number" id="childrenNum" name="childrenNum" formControlName="childrenNum" aria-label="Number of Children">
                 <div class="error" *ngIf="propertyForm?.get('childrenNum')?.invalid && propertyForm?.get('childrenNum')?.touched">Number of Children is required</div>
             </div>
             <div>
                 <label for="babiesNum">Babies: *</label>
-                <input type="number" id="babiesNum" name="babiesNum" formControlName="babiesNum">
+                <input type="number" id="babiesNum" name="babiesNum" formControlName="babiesNum" aria-label="Number of Babies">
                 <div class="error" *ngIf="propertyForm?.get('babiesNum')?.invalid && propertyForm?.get('babiesNum')?.touched">Number of Babies is required</div>
             </div>
         </div>
@@ -64,17 +64,17 @@
         <div class="camp-numbers">
             <div>
                 <label for="bathrooms">Bathrooms: *</label>
-                <input type="number" id="bathrooms" name="bathrooms" formControlName="bathrooms">
+                <input type="number" id="bathrooms" name="bathrooms" formControlName="bathrooms" aria-label="Number of Bathrooms">
                 <div class="error" *ngIf="propertyForm?.get('bathrooms')?.invalid && propertyForm?.get('bathrooms')?.touched">Number of Bathrooms is required</div>
             </div>
             <div>
                 <label for="bedrooms">Bedrooms: *</label>
-                <input type="number" id="bedrooms" name="bedrooms" formControlName="bedrooms">
+                <input type="number" id="bedrooms" name="bedrooms" formControlName="bedrooms" aria-label="Number of Bedrooms">
                 <div class="error" *ngIf="propertyForm?.get('bedrooms')?.invalid && propertyForm?.get('bedrooms')?.touched">Number of Bedrooms is required</div>
             </div>
             <div>
                 <label for="beds">Beds: *</label>
-                <input type="number" id="beds" name="beds" formControlName="beds">
+                <input type="number" id="beds" name="beds" formControlName="beds" aria-label="Number of Beds">
                 <div class="error" *ngIf="propertyForm?.get('beds')?.invalid && propertyForm?.get('beds')?.touched">Number of Beds is required</div>
             </div>
         </div>
@@ -82,57 +82,63 @@
         <div class="camp">
             <div>
                 <label for="neighborhood">Neighborhood:</label>
-                <input type="text" id="neighborhood" name="neighborhood" formControlName="neighborhood">
+                <input type="text" id="neighborhood" name="neighborhood" formControlName="neighborhood" aria-label="Neighborhood">
             </div>
-           
         </div>
 
         <div class="checkbox-group">
             <div class="checkbox-container">
-                <input type="checkbox" id="isSuperhost" name="isSuperhost" formControlName="isSuperhost">
+                <input type="checkbox" id="isSuperhost" name="isSuperhost" formControlName="isSuperhost" aria-label="Is Superhost">
                 <label for="isSuperhost">Is Superhost</label>
             </div>
             <div class="checkbox-container">
-                <input type="checkbox" id="rareFind" name="rareFind" formControlName="rareFind">
+                <input type="checkbox" id="rareFind" name="rareFind" formControlName="rareFind" aria-label="Rare Find">
                 <label for="rareFind">Rare Find</label>
             </div>
         </div>
 
         <div class="checkbox-group">
             <div class="checkbox-container">
-                <input type="checkbox" id="hasWIFI" name="hasWIFI" formControlName="hasWIFI">
+                <input type="checkbox" id="hasWIFI" name="hasWIFI" formControlName="hasWIFI" aria-label="Has WIFI">
                 <label for="hasWIFI">Has WIFI</label>
             </div>
             <div class="checkbox-container">
-                <input type="checkbox" id="hasKitchen" name="hasKitchen" formControlName="hasKitchen">
+                <input type="checkbox" id="hasKitchen" name="hasKitchen" formControlName="hasKitchen" aria-label="Has Kitchen">
                 <label for="hasKitchen">Has Kitchen</label>
             </div>
             <div class="checkbox-container">
-                <input type="checkbox" id="hasParking" name="hasParking" formControlName="hasParking">
+                <input type="checkbox" id="hasParking" name="hasParking" formControlName="hasParking" aria-label="Has Parking">
                 <label for="hasParking">Has Parking</label>
             </div>
             <div class="checkbox-container">
-                <input type="checkbox" id="hasSelfCheckin" name="hasSelfCheckin" formControlName="hasSelfCheckin">
+                <input type="checkbox" id="hasSelfCheckin" name="hasSelfCheckin" formControlName="hasSelfCheckin" aria-label="Has Self Checkin">
                 <label for="hasSelfCheckin">Has Self Checkin</label>
             </div>
             <div class="checkbox-container">
-                <input type="checkbox" id="hasWorkSpace" name="hasWorkSpace" formControlName="hasWorkSpace">
+                <input type="checkbox" id="hasWorkSpace" name="hasWorkSpace" formControlName="hasWorkSpace" aria-label="Has Workspace">
                 <label for="hasWorkSpace">Has Workspace</label>
             </div>
             <div class="checkbox-container">
-                <input type="checkbox" id="hasFridge" name="hasFridge" formControlName="hasFridge">
+                <input type="checkbox" id="hasFridge" name="hasFridge" formControlName="hasFridge" aria-label="Has Fridge">
                 <label for="hasFridge">Has Fridge</label>
             </div>
         </div>
 
         <div>
             <label for="images">Images: *</label>
-            <input type="file" id="images" name="images[]" multiple formControlName="images" (change)="onFileChange($event)" />
+            <input type="file" id="images" name="images" multiple formControlName="images" aria-label="Images" (change)="onFileChange($event)" />
             <div class="error" *ngIf="propertyForm?.get('images')?.invalid && propertyForm?.get('images')?.touched">Images are required</div>
         </div>
 
-        <button type="submit" class="submit-btn">Add Property</button>
+        <button type="submit" class="submit-btn" aria-label="Add Property">Add Property</button>
     </form>
+
+    <div class="popup" *ngIf="showModal">
+        <img src="assets/imgs/success.png" alt="success" aria-label="Success">
+        <h2>Property added successfully</h2>
+        <p>Thank you for adding your property to our platform. We will review your property.</p>
+        <button type="button" (click)="closeModal()" aria-label="Close Modal">OK</button>
+    </div>
 
     <p class="required-note">* Required fields</p>
 </div>

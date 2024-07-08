@@ -1,32 +1,45 @@
 <div class="container">
-    <p class="added-prop-quantity">
-      <span class="added-prop-quantity__text"> Added Houses: </span>
-      <span class="added-prop-quantity_num">{{ myProperties.length }}</span>
-    </p>
-    <div class="my-props" *ngFor="let property of myProperties">
-      <img [src]="property.images[0]" alt="Property Image">
-      <div class="prop-details">
-        <div class="top-details">   
-          <div class="left-side">
-            <span class="local"><span style="font-weight: bold;">Property name: </span> {{ property.name }}</span>
-            <span class="price"><span style="font-weight: bold;">price: </span>{{ property.amount }}€ / night</span>
-            <span class="capacity"> <span style="font-weight: bold;">capacity: </span> {{ property.persons }} Persons</span>
-          </div>
-          <div class="right-side">
-            <span style="font-weight: bold;">Comodities: </span>
-            <ul class="commodities">
-              <li *ngFor="let amenity of property.previewAmenities">{{ amenity }}</li>
-            </ul>
-          </div>
+  <p class="added-prop-quantity">
+    <span class="added-prop-quantity__text"> Added Houses: </span>
+    <span class="added-prop-quantity_num">{{ myProperties.length }}</span>
+  </p>
+  <div class="my-props" *ngFor="let property of myProperties">
+    <img [src]="property.images[0]" alt="Property Image">
+    <div class="prop-details">
+      <div class="top-details">
+        <div class="left-side">
+          <span class="local"><span style="font-weight: bold;">Property name: </span> {{ property.name }}</span>
+          <span class="price"><span style="font-weight: bold;">price: </span>{{ property.amount }}€ / night</span>
+          <span class="capacity"> <span style="font-weight: bold;">capacity: </span> {{ property.persons }} Persons</span>
         </div>
-        <div class="bottom-detail">
-          <p>{{ property.cancelPolicy }}</p>
+        <div class="right-side">
+          <span style="font-weight: bold;">Comodities: </span>
+          <ul class="commodities">
+            <li *ngFor="let amenity of property.previewAmenities">{{ amenity }}</li>
+            <p *ngIf="property.previewAmenities.length == 0"> Esta casa é dos pobres e nao tem comodiades</p>
+          </ul>
         </div>
-        <div class="action-buttons">
-          <button class="edit-btn">Edit</button>
-          <button class="remove-btn" (click)="removeMyProperty(property)">Remove</button>
-        </div>
+      </div>
+      <div class="bottom-detail">
+        <p> Cancel Policy: {{ property.cancelPolicy }}</p>
+      </div>
+      <div class="action-buttons">
+        <button class="remove-btn" (click)="showModal(property)">Remove</button>
       </div>
     </div>
   </div>
-  
+
+  <!-- Modal -->
+  <div id="modal" class="modal-container" [ngClass]="{'show': isModalVisible}">
+    <div class="modal-content">
+      <h2>Delete Confirmation</h2>
+      <p class="confirmation-message">
+        Are you sure you want to delete this item?
+      </p>
+      <div class="button-container">
+        <button id="cancelBtn" class="button cancel-button" (click)="hideModal()">Cancel</button>
+        <button id="deleteBtn" class="button delete-button" (click)="confirmDelete()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
